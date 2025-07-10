@@ -1,6 +1,6 @@
 // useRecommendations.js
 
-import { useState } from 'react';
+import {useState} from 'react';
 import recommendationService from '../services/recommendation.service';
 
 function useRecommendations(products) {
@@ -10,7 +10,7 @@ function useRecommendations(products) {
     return recommendationService.getRecommendations(formData, products);
   };
 
-  return { recommendations, getRecommendations, setRecommendations };
+  return {recommendations, getRecommendations, setRecommendations};
 }
 
 export default useRecommendations;

@@ -22,6 +22,14 @@ function RecommendationType({ onRecommendationTypeChange }) {
           className="mr-2"
         />
         <label htmlFor="MultipleProducts">Múltiplos Produtos</label>
+        <Checkbox
+          type="radio"
+          name="recommendationType"
+          value="BetterProduct"
+          onChange={() => onRecommendationTypeChange('BetterProduct')}
+          className="mr-2"
+        />
+        <label htmlFor="BetterProduct">Melhor Produto</label>
       </div>
     </div>
   );
