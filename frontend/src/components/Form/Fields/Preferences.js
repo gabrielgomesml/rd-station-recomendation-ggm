@@ -1,6 +1,6 @@
 // Preferences.js
 
-import React, { useState } from 'react';
+import React, { useState, useRef, useEffect, useCallback } from 'react';
 import Checkbox from '../../shared/Checkbox';
 
 function Preferences({
@@ -11,6 +11,8 @@ function Preferences({
   const [currentPreferences, setCurrentPreferences] = useState(selectedPreferences)
   const [hideContent, setHideContent] = useState(true);
 
+  const dropdownRef = useRef(null);
+
   const handlePreferenceChange = (preference) => {
     const updatedPreferences = currentPreferences.includes(preference)
       ? currentPreferences.filter((pref) => pref !== preference)
@@ -20,12 +22,28 @@ function Preferences({
     onPreferenceChange(updatedPreferences);
   };
 
-  const handleHideContent = () => {
+  const handleHideContent = useCallback(() => {
     setHideContent(!hideContent);
-  };
+  }, [hideContent])
+
+  useEffect(() => {
+    const handleOutsideClick = (event) => {
+      if (dropdownRef.current && !dropdownRef.current.contains(event.target)) {
+        handleHideContent()
+      }
+    }
+
+    if (!hideContent) {
+      document.addEventListener('mousedown', handleOutsideClick);
+    }
+
+    return () => {
+      document.removeEventListener('mousedown', handleOutsideClick);
+    };
+  }, [handleHideContent, hideContent])
 
   return (
-    <div className="mb-4">
+    <div className="mb-4" ref={dropdownRef}>
       <h2 
         className="text-lg font-bold mb-2 pb-2 border-b border-black-300 flex items-center justify-between cursor-pointer hover:bg-gray-100 p-2 rounded"
         onClick={() => handleHideContent()}
