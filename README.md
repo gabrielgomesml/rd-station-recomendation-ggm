@@ -1,3 +1,11 @@
+## Observações - Gabriel Melo
+
+- Foquei em duas coisas: Primeiro em fazer os requisitos básicos, relacionados a recomendação, e depois ao que eu poderia implementar além pensando em um negócio de recomendações. Para isso, adicionei outra opção de recomendação que chamei de "Melhor Produto", em que devolve os produtos que se encaixam com todos os atributos marcados.
+- Coloquei algumas alterações de UI, que pode ajudar o usuário, como trocar uma lista por um dropdown e colocar informações sobre o que é cada tipo de recomendação.
+- Em relação aos testes, foquei em fazer testes unitários para os componentes, tentando cobrir a funcionalidade base de cada um. Features e Preferences são dois componentes iguais, portanto concentrei os testes apenas para o componente Features.
+- Esses dois componentes Features poderia ser resumido em um único componente, pois eles são semelhantes, isso na minha visão faria muito sentido em um projeto real e evitaria repetição de código. Entretanto, como é um escopo pequeno, fica mais fácil a leitura se eles estão separados e não polui o projeto.
+- Em relação ao algoritmo de recomendação, vejo como O (n)2, como a lista de produtos é pequena, não há perdas significativas em dois loops aninhados.
+
 # Teste Técnico - Recomendador de Produtos RD Station
 
 Este projeto é parte do teste técnico para a vaga de desenvolvedor front-end na RD Station. O objetivo principal é implementar a lógica de recomendação de produtos RD Station em uma aplicação web existente.
