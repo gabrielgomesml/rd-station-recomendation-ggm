@@ -6,6 +6,9 @@ const getRecommendations = (
 ) => {
   let recommendedProducts = []
   const selectedPreferencesAndFeatures = formData.selectedFeatures.concat(formData.selectedPreferences);
+  if (selectedPreferencesAndFeatures.length === 0) {
+    return []
+  }
   switch(formData.selectedRecommendationType){
     case 'MultipleProducts':
       products.forEach((product) => {

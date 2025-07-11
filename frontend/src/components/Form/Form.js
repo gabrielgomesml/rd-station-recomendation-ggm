@@ -18,6 +18,11 @@ function Form({setRecommendations}) {
   const {getRecommendations} = useRecommendations(products);
 
   const handleSubmit = (e) => {
+    if (formData.selectedRecommendationType === '') {
+      alert('Selecione o tipo de recomendação.')
+    } else if (formData.selectedFeatures.length + formData.selectedPreferences.length === 0) {
+      alert('Selecione pelo menos um atributo: Preferências e/ou Funcionalidades.')
+    }
     e.preventDefault();
     const dataRecommendations = getRecommendations(formData);
     setRecommendations(dataRecommendations);
@@ -25,7 +30,7 @@ function Form({setRecommendations}) {
 
   return (
     <form
-      className="max-w-md mx-auto p-4 bg-white rounded-lg shadow-md"
+      className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-full min-h-[300px] mx-auto p-4 bg-white rounded-lg shadow-md"
       onSubmit={handleSubmit}
     >
       <Preferences
@@ -40,12 +45,14 @@ function Form({setRecommendations}) {
           handleChange('selectedFeatures', selected)
         }
       />
-      <RecommendationType
-        onRecommendationTypeChange={(selected) =>
-          handleChange('selectedRecommendationType', selected)
-        }
-      />
-      <SubmitButton text="Obter recomendação" />
+      <div className="flex flex-col gap-4">
+        <RecommendationType
+          onRecommendationTypeChange={(selected) =>
+            handleChange('selectedRecommendationType', selected)
+          }
+        />
+        <SubmitButton text="Obter recomendação" />
+      </div>
     </form>
   );
 }

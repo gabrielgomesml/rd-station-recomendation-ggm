@@ -4,6 +4,7 @@
       "id": 1,
       "name": "RD Station CRM",
       "category": "Vendas",
+      "asset": "https://d3jj9yc7rgpax4.cloudfront.net/brand-system/logos/rd-station-default.svg",
       "preferences": [
         "Integração fácil com ferramentas de e-mail",
         "Personalização de funis de vendas",
@@ -19,6 +20,7 @@
       "id": 2,
       "name": "RD Station Marketing",
       "category": "Marketing",
+      "asset": "https://d3jj9yc7rgpax4.cloudfront.net/brand-system/logos/rd-station-default.svg",
       "preferences": [
         "Automação de marketing",
         "Testes A/B para otimização de campanhas",
@@ -34,6 +36,7 @@
       "id": 3,
       "name": "RD Conversas",
       "category": "Omnichannel",
+      "asset": "https://d3jj9yc7rgpax4.cloudfront.net/brand-system/logos/rd-station-default.svg",
       "preferences": [
         "Integração com chatbots",
         "Histórico unificado de interações",
@@ -49,6 +52,7 @@
       "id": 4,
       "name": "RD Mentor AI",
       "category": "Uso de Inteligência Artificial",
+      "asset": "https://d3jj9yc7rgpax4.cloudfront.net/brand-system/logos/rd-station-default.svg",
       "preferences": [
         "Análise preditiva de dados",
         "Recomendações personalizadas para usuários",
